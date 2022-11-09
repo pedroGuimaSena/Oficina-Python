@@ -25,7 +25,7 @@ def calcular_mmc(n1,n2):
     while n1!=1 or n2!=1:
         primo = primo_posicao(pos)
         
-        if n1%primo==0 or n2%primo==0:
+        while n1%primo==0 or n2%primo==0:
             mmc = mmc*primo
             
             if n1%primo==0:
@@ -33,10 +33,8 @@ def calcular_mmc(n1,n2):
                 
             if n2%primo==0:
                 n2 = int(n2/primo)
-    pos +=1
+            pos +=1
     return mmc
             
-
-
 
 print(calcular_mmc(16,8))
